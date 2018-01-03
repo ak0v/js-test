@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --hot", 
+    "build": "webpack -p", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
