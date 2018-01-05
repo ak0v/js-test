@@ -4,8 +4,8 @@
   "description": "js test",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server --hot", 
-    "build": "webpack -p", 
+    "start": "webpack-dev-server --hot",
+    "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,9 @@
     "babel-preset-react": "^6.24.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-scroll": "^1.7.5",
+    "react-sticky": "^6.0.1",
+    "react-stickynode": "^1.4.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   }
