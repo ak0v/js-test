@@ -4,12 +4,13 @@ import Menu from './modules/Menu';
 import TitleBar from './modules/TitleBar';
 import TopicContainer from './modules/TopicContainer';
 
+
 class App extends React.Component {
    render() {
       return (
         <div id="main">
-        <TitleBar id='titleBar'></TitleBar>
-        <div id='titleseparator'></div>
+        <TitleBar id='titlebar'></TitleBar>
+        <div id='titleseparator' style={{ height: '200px' }}></div>
         <Sticky enabled={true}>
         <Menu id="menu"
               items={[{label:"Link1", href:'link1'},
