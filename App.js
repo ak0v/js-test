@@ -3,7 +3,7 @@ import Sticky from 'react-stickynode';
 import Menu from './modules/Menu'; 
 import TitleBar from './modules/TitleBar';
 import TopicContainer from './modules/TopicContainer';
-
+import Authorization from './modules/Authorization';
 
 class App extends React.Component {
    render() {
@@ -19,7 +19,8 @@ class App extends React.Component {
         </Menu>
         </Sticky>
         <TopicContainer id='link1' name="link1" title="Long and descriptive link 1">
-          <div>
+          <div> 
+            <Authorization></Authorization>
             <p> text related to link1 </p>
           </div>
         </TopicContainer>
