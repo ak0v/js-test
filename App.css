@@ -1,38 +1,5 @@
 
 /**
- * Title bar
- */
-
- .titlebar {
-  background-color: black;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
-  display: block;
-  margin: auto;
-  width: 70%;
-  padding: 10px 0 10px 0;
-}
-
-.titlebar .bride-name {
-  font-family: 'EdwardianScrAltITCTT';
-  font-size: 8em;
-  line-height: 100%;
-}
-
-.titlebar .groom-name {
-  font-family: 'EdwardianScrAltITCTT';
-  font-size: 8em;
-  line-height: 100%;
-}
-
-.titlebar .wedding-date {
-  font-family: 'EdwardianScrAltITCTT';
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  margin-top: 15px;
-}
-
-/**
  * Menu
  */
 

@@ -74,39 +74,52 @@ hr {
     padding-bottom: 300px;
 }
 
+
 /**
  * Title bar
  */
 
-.titlebar {
+ .titlebar {
     background-color: black;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     display: block;
     margin: auto;
+    margin-top: 2%;
     width: 70%;
     padding: 10px 0 10px 0;
-}
-
-.titlebar .bride-name {
-    font-family: 'EdwardianScrAltITCTT';
+  }
+  
+  .titlebar .bride-name {
+    font-family: 'Edwardian Scr Alt ITC TT';
     font-size: 11em;
     line-height: 100%;
-}
-
-.titlebar .groom-name {
-    font-family: 'EdwardianScrAltITCTT';
+  }
+  
+  .titlebar .groom-name {
+    font-family: 'Edwardian Scr Alt ITC TT';
     font-size: 8em;
     line-height: 100%;
-}
-
-.titlebar .wedding-date {
-    font-family: 'EdwardianScrAltITCTT';
+  }
+  
+  .titlebar .wedding-date {
+    font-family: 'Edwardian Scr Alt ITC TT';
     font-size: 2.5em;
     margin-bottom: 20px;
     margin-top: 15px;
-}
+  }
 
+  .titlebar .countdown {
+    font-family: 'Edwardian Scr Alt ITC TT';
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+  .titlebar .countdown .number{
+    font-size: 2.5em;
+    margin-top: 15px;
+  }
+  
 /**
  * Menu
  */

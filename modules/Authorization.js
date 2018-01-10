@@ -4,7 +4,17 @@ import FireabaseUI from 'firebaseui';
 
 class Authorization extends React.Component{
     render(){
+        
+      var config = {
+        apiKey: "AIzaSyDUZr5cXYcaxpNNprzWUadEkm4_wbNycjk",
+        authDomain: "js-training-1.firebaseapp.com",
+        databaseURL: "https://js-training-1.firebaseio.com",
+        projectId: "js-training-1",
+        storageBucket: "js-training-1.appspot.com",
+        messagingSenderId: "1020111315819"
+     };
 
+      Firebase.initializeApp(config);
 
         var uiConfig = {
             signInOptions: [

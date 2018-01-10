@@ -4,12 +4,12 @@ import Countdown from './Countdown';
 class TitleBar extends React.Component{
     render() {
         return(
-            <header id={this.props.id} className="titlebar">
+            <header className="titlebar">
                 <span className="bride-name">Стефка</span>
                 <span className="groom-name">&nbsp;
-                    <span>+</span>Андрей</span>
-                <div className="wedding-date">21<sup>st</sup> APRIL, 2018</div>
-                <Countdown></Countdown>
+                    <span>&amp;</span>&nbsp;Андрей</span>
+                <div className="wedding-date">21<sup></sup> Април, 2018</div>
+                <Countdown id="countdown"></Countdown>
             </header>
         )
     }

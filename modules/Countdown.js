@@ -15,11 +15,11 @@ class Countdown extends React.Component{
 		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         return(
             
-            <div>
-                <span>{days}<small>days</small></span>
-                <span>{hours}<small>hours</small></span>
-                <span>{minutes}<small>minutes</small></span>
-                <span>{seconds}<small>seconds</small></span>
+            <div className="countdown">
+                <span className="number" >{days}<small>дни</small>&nbsp;</span>
+                <span className="number" >{hours}<small>часа</small>&nbsp;</span>
+                <span className="number" >{minutes}<small>минути</small>&nbsp;</span>
+                <span className="number" >{seconds}<small>секунди</small>&nbsp;</span>
             </div>
         )
     }

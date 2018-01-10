@@ -1,10 +1,10 @@
+
 @font-face {
-    font-family: 'EdwardianScrAltITCTT';
-    src: url('edwasai.eot');
-    src: url('Edwardian Scr Alt ITC TT.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Edwardian Scr Alt ITC TT';
     font-style: normal;
-}
+    font-weight: normal;
+    src: url('ofont.ru_Edwardian Scr ITC TT.ttf') format('truetype');
+    }
 
 @font-face {
     font-family: 'FuturaLT';
