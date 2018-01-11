@@ -16,10 +16,10 @@ class Countdown extends React.Component{
         return(
             
             <div className="countdown">
-                <span className="number" >{days}<small>дни</small>&nbsp;</span>
-                <span className="number" >{hours}<small>часа</small>&nbsp;</span>
-                <span className="number" >{minutes}<small>минути</small>&nbsp;</span>
-                <span className="number" >{seconds}<small>секунди</small>&nbsp;</span>
+                <span className="number" >{days}<small>&nbsp;дни</small>&nbsp;</span>
+                <span className="number" >{hours}<small>&nbsp;часа</small>&nbsp;</span>
+                <span className="number" >{minutes}<small>&nbsp;минути</small>&nbsp;</span>
+                <span className="number" >{seconds}<small>&nbsp;секунди</small>&nbsp;</span>
             </div>
         )
     }

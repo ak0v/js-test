@@ -12,54 +12,33 @@
 }
 
 body {
-    background-attachment: fixed;
-    background-image: url('../img/bgimage.jpg');
+    /*background-attachment: fixed;
+    background-image: url('../img/cover_work.jpg');*//*
     background-position-x: center;
     background-position-y: top;
     background-repeat: no-repeat;
-    background-size: cover;
-    color: rgb(0, 0, 0);
-    font-family: "FuturaLTBook", Arial, sans-serif;
-    font-size: medium;
-    line-height: 1.4;
+    background-size: cover;*/
     text-align: center;
 }
-
-a {
-    color: #b1bf92;
-    text-decoration: none;
-}
-
-h1 {
-    font-family: "EdwardianScrAltITCTT", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 6em;
-    padding-bottom: 20px;
-}
-
-h2 {
-    font-size: 1.7em;
-    padding-bottom: 15px;
-}
-
-h3 {
-    font-size: 1.5em;
-    padding-bottom: 8px;
-    padding-top: 5px;
-}
+ 
 
 p {
     font-size: 1.4em;
     padding-bottom: 8px;
 }
 
-hr {
-    border-bottom:#808080 solid 1px;
-    border-top:#1e1e1e solid 1px;
-    margin: 60px auto 60px auto;
-    width: 90%;
-}
 
 ::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::-webkit-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::-ms-selection {
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -68,13 +47,7 @@ hr {
     background: #b3d4fc;
     text-shadow: none;
 }
-
-#content {
-    padding-top: 200px;
-    padding-bottom: 300px;
-}
-
-
+  
 /**
  * Title bar
  */
@@ -86,25 +59,29 @@ hr {
     display: block;
     margin: auto;
     margin-top: 2%;
-    width: 70%;
+    width: 80%;
     padding: 10px 0 10px 0;
   }
-  
+/*  */ 
   .titlebar .bride-name {
+    display: inline-block;
     font-family: 'Edwardian Scr Alt ITC TT';
-    font-size: 11em;
+    font-size: 10em;
     line-height: 100%;
   }
   
   .titlebar .groom-name {
+    display: inline-block;
     font-family: 'Edwardian Scr Alt ITC TT';
-    font-size: 8em;
+    font-size: 10em;
     line-height: 100%;
   }
-  
+ 
   .titlebar .wedding-date {
-    font-family: 'Edwardian Scr Alt ITC TT';
-    font-size: 2.5em;
+    font-family: 'Attractive';
+    font-size: 18px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
     margin-bottom: 20px;
     margin-top: 15px;
   }
@@ -116,14 +93,24 @@ hr {
     margin-top: 15px;
   }
   .titlebar .countdown .number{
+    display: inline-block;
+    margin: 0 30px;
     font-size: 2.5em;
+    font-family: 'Edwardian Scr Alt ITC TT';
     margin-top: 15px;
+  }
+  .titlebar .countdown .number small{
+      display: block;
+      font-size: 14px; 
+      font-family: 'Attractive';
+      letter-spacing: 10px;
+      text-transform: uppercase;
   }
   
 /**
  * Menu
  */
-
+/*
 .menu {
     background-color: #333;
 }
@@ -159,11 +146,11 @@ hr {
     outline: none;
     text-decoration: none;
 }
-
+*/
 /**
  * Topic container
  */
-
+/*
 .topic-wrapper {
     margin: auto;
     padding-top: 200px;
@@ -183,11 +170,11 @@ hr {
     -webkit-border-radius: 8px;
     border-radius: 8px;
 }
-
+*/
 /**
  * Wizard form
  */
-
+/*
 .wizard-form input {
     vertical-align: middle;
 }
@@ -221,7 +208,7 @@ hr {
     text-decoration: none;
     width: 100%;
 
-    -webkit-transition-duration: 0.3s; /* Safari */
+    -webkit-transition-duration: 0.3s;  
     transition-duration: 0.3s;
 }
 
@@ -229,11 +216,11 @@ hr {
     background-color: #b1bf92;
     color: white;
 }
-
+*/
 /**
  * Alerts
  */
-
+/*
 .alert-error {
     background-color: red;
     color: white;
@@ -258,11 +245,11 @@ hr {
     margin-left: 15px;
     transition: 0.3s;
 }
-
+*/
 /**
  * Tooltips
  */
-
+/*
 .tooltip {
     border-bottom: 1px dotted white;
     display: inline-block;
@@ -287,11 +274,11 @@ hr {
     opacity: 1;
     visibility: visible;
 }
-
+*/
 /**
  * Google Maps
  */
-
+/*
 #gmap {
     margin: 5px 0 10px 0;
     text-align: center;
@@ -321,11 +308,11 @@ hr {
     outline: none;
     text-decoration: underline;
 }
-
+*/
 /**
  * Misc
  */
-
+/*
 img.thumbnail {
     background-color: black;
     border: 4px solid #090909;
@@ -376,11 +363,11 @@ img.location-image {
 .credits {
     font-size: 0.5em;
 }
-
+*/
 /**
  * Grid (obtained from https://github.com/dhg/Skeleton)
  */
-
+/*
 .container {
   margin: auto;
   padding: 0 20px;
@@ -399,15 +386,15 @@ img.location-image {
     width: 100%;
     float: left;
 }
-
-/* For devices larger than 400px */
+*/
+/* For devices larger than 400px *//*
 @media (min-width: 400px) {
     .container {
         padding: 0;
     }
 }
-
-/* For devices larger than 550px */
+*/
+/* For devices larger than 550px *//*
 @media (min-width: 550px) {
     .column,
     .columns {
@@ -436,8 +423,8 @@ img.location-image {
     .two-thirds.column              { width: 65.3333333333%; }
 
     .one-half.column                { width: 48%; }
-
-    /* Offsets */
+*/
+    /* Offsets *//*
     .offset-by-one.column,
     .offset-by-one.columns          { margin-left: 8.66666666667%; }
     .offset-by-two.column,
@@ -469,12 +456,12 @@ img.location-image {
     .offset-by-one-half.column,
     .offset-by-one-half.columns     { margin-left: 52%; }
 }
-
+*/
 /**
  * Media queries
  */
 
-/* Desktop */
+/* Desktop *//*
 @media (max-width: 1000px) {
     h1 {
         font-size: 4.8em;
@@ -492,16 +479,16 @@ img.location-image {
         font-size: 2.5em;
     }
 }
-
-/* Tablet */
+*/
+/* Tablet *//*
 @media (max-width: 900px) {
     /* Hide the menu if running on a device with screen smaller than its width */
     nav {
         display: none
     }
 }
-
-/* Phablet */
+*/
+/* Phablet *//*
 @media (max-width: 600px) {
     body {
         background-image: url('../img/bgimage-mobile.jpg');
@@ -555,10 +542,10 @@ img.location-image {
         width: 220px;
     }
 }
-
-/* Phone */
+*/
+/* Phone *//*
 @media (max-width: 400px) {
     body {
         background-size: 360%;
     }
-}
+}*/
