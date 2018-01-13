@@ -4,7 +4,7 @@ import React from 'react';
 
 class Countdown extends React.Component{
     render(){
-        let countDownDate = new Date("Apr 21, 2018 16:30:00").getTime();
+        let countDownDate = new Date("Apr 21, 2018 17:30:00").getTime();
         let now = new Date().getTime();
         var distance = countDownDate - now;
 
