@@ -3,34 +3,87 @@ import Firebase from 'firebase';
 import FireabaseUI from 'firebaseui';
 
 class Authorization extends React.Component{
+    constructor(){
+        super();
+        this.state={firstGuestName : '',
+                    firstGuestEmail : '', 
+                    secondGuestName : '',
+                    secondGuestEmail: '', 
+                    vegetarianYN : false,
+                    vegetarianMenus : 0,
+                    childYN : false,
+                    childMenus : 0}
+
+        this.handleChange =  this.handleChange.bind(this);
+        this.handleSubmit =  this.handleSubmit.bind(this);
+    }           
+
+    handleChange(e) {
+        this.setState({
+          [e.target.name]: e.target.value
+        });
+      }
+
+      handleSubmit(e) {
+        e.preventDefault();
+        const guestRef = Firebase.database().ref('guest');
+        const guest = { firstGuestName : '',
+                        firstGuestEmail : '', 
+                        secondGuestName : '',
+                        secondGuestEmail: '', 
+                        vegetarianYN : false,
+                        vegetarianMenus : 0,
+                        childYN : false,
+                        childMenus : 0}
+        guestRef.push(guest);
+        this.setState({ firstGuestName : '',
+                        firstGuestEmail : '', 
+                        secondGuestName : '',
+                        secondGuestEmail: '', 
+                        vegetarianYN : false,
+                        vegetarianMenus : 0,
+                        childYN : false,
+                        childMenus : 0});
+      }
+
     render(){
         
-      var config = {
-        apiKey: "AIzaSyDUZr5cXYcaxpNNprzWUadEkm4_wbNycjk",
-        authDomain: "js-training-1.firebaseapp.com",
-        databaseURL: "https://js-training-1.firebaseio.com",
-        projectId: "js-training-1",
-        storageBucket: "js-training-1.appspot.com",
-        messagingSenderId: "1020111315819"
-     };
-
-      Firebase.initializeApp(config);
-
-        var uiConfig = {
-            signInOptions: [
-                Firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
-                Firebase.auth.EmailAuthProvider.PROVIDER_ID
-            ]
-        }
-        
-        var ui = new FireabaseUI.auth.AuthUI(Firebase.auth());
-
-        ui.start('#firebaseui-auth-container',uiConfig);
-
         return(
-            <div>
+            <div id={this.props.id} className="wizzard-form" >
             <h1>Authorization section to follow!</h1>
-            <div id="firebaseui-auth-container"></div>
+            <form onSubmit={this.handleSubmit}>
+                <div id="firstGuestName" className="rsvp-section">
+                    <label>firstGuestName</label>
+                    <input type="text" name="firstGuestName" placeholder="What's your name?" onChange={this.handleChange} value={this.state.firstGuestName} />
+                </div>
+                <div id="firstGuestEmail" className="rsvp-section">
+                    <label>firstGuestEmail</label>
+                    <input type="text" name="email" placeholder="What's your email address?" onChange={this.handleChange} value={this.state.firstGuestEmail} />
+                </div>
+                <div id="secondGuestName" className="rsvp-section">
+                    <label>secondGuestName</label>
+                    <input type="text" name="secondGuestName" placeholder="What's your name?" onChange={this.handleChange} value={this.state.secondGuestName} />
+                </div>
+                <div id="secondGuestEmail" className="rsvp-section">
+                    <label>secondGuestEmail</label>
+                    <input type="text" name="email" placeholder="What's your email address?" onChange={this.handleChange} value={this.state.secondGuestEmail} />
+                </div>
+                <div className="rsvp-section">
+                    <label>Vegetarian?</label>
+                    <input type="checkbox" name="vegetarianYN" onChange={this.handleChange} value={this.state.vegetarianYN}/>
+                </div>
+                {this.state.vegetarianYN === true && <div className="rsvp-section">
+                    <input type="number" name="vegetarianMenus" placeholder="0" onChange={this.handleChange} value={this.state.vegetarianMenus}/>
+                </div>}
+                <div className="rsvp-section">
+                    <label>Child?</label>
+                    <input type="checkbox" name="childYN" onChange={this.handleChange} value={this.state.childYN}/>
+                </div>
+                {this.state.childYN === true && <div className="rsvp-section">
+                    <input type="number" name="childMenus" placeholder="0" onChange={this.handleChange} value={this.state.childMenus}/>
+                </div>}
+                <button>Submit</button>
+            </form>
             </div>
         )
     }
