@@ -1,6 +1,5 @@
 import React from 'react'
-import Firebase from 'firebase';
-import FireabaseUI from 'firebaseui';
+import Firebase from './firebase';  
 
 class Authorization extends React.Component{
     constructor(){
@@ -16,6 +15,7 @@ class Authorization extends React.Component{
 
         this.handleChange =  this.handleChange.bind(this);
         this.handleSubmit =  this.handleSubmit.bind(this);
+        
     }           
 
     handleChange(e) {
@@ -90,4 +90,4 @@ class Authorization extends React.Component{
 
 }
 
-export default Authorization
+export default Authorization;
