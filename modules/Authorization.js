@@ -91,24 +91,3 @@ class Authorization extends React.Component{
 }
 
 export default Authorization;
-
-const gmailEmail = functions.config().gmail.email;
-const gmailPassword = functions.config().gmail.password;
-const mailTransport = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: gmailEmail,
-        pass: gmailPassword
-    }
-});
-
-function sendResponseEmail(email,displayName) {
-    const mailOptions = {
-        from: 'stefkaplusandrey4life@gmail.com <noreply@firebase.com>',
-        to: 'andrej.kovachev@gmail.com'
-    }
-
-    return mailTransport.sendMail(mailOptions).then(() => {
-        console.log('New email sent to :', email);
-    });
-};
