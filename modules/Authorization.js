@@ -1,6 +1,5 @@
 import React from 'react'
-import Firebase from 'firebase';
-import FireabaseUI from 'firebaseui';
+import Firebase from './firebase';  
 
 class Authorization extends React.Component{
     constructor(){
@@ -16,6 +15,7 @@ class Authorization extends React.Component{
 
         this.handleChange =  this.handleChange.bind(this);
         this.handleSubmit =  this.handleSubmit.bind(this);
+        
     }           
 
     handleChange(e) {
@@ -90,4 +90,25 @@ class Authorization extends React.Component{
 
 }
 
-export default Authorization
+export default Authorization;
+
+const gmailEmail = functions.config().gmail.email;
+const gmailPassword = functions.config().gmail.password;
+const mailTransport = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: gmailEmail,
+        pass: gmailPassword
+    }
+});
+
+function sendResponseEmail(email,displayName) {
+    const mailOptions = {
+        from: 'stefkaplusandrey4life@gmail.com <noreply@firebase.com>',
+        to: 'andrej.kovachev@gmail.com'
+    }
+
+    return mailTransport.sendMail(mailOptions).then(() => {
+        console.log('New email sent to :', email);
+    });
+};
