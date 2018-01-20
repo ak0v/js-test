@@ -1,5 +1,5 @@
 import React from 'react'
-import Firebase from './firebase';  
+import firebase from './firebase';  
 
 class Authorization extends React.Component{
     constructor(){
@@ -12,10 +12,9 @@ class Authorization extends React.Component{
                     vegetarianMenus : 0,
                     childYN : false,
                     childMenus : 0}
-
         this.handleChange =  this.handleChange.bind(this);
+        this.handleCheckboxChange =  this.handleCheckboxChange.bind(this);
         this.handleSubmit =  this.handleSubmit.bind(this);
-        
     }           
 
     handleChange(e) {
@@ -24,17 +23,23 @@ class Authorization extends React.Component{
         });
       }
 
+    handleCheckboxChange(e) {
+        this.setState({
+          [e.target.name]: e.target.checked
+        });
+      }
+
       handleSubmit(e) {
         e.preventDefault();
-        const guestRef = Firebase.database().ref('guest');
-        const guest = { firstGuestName : '',
-                        firstGuestEmail : '', 
-                        secondGuestName : '',
-                        secondGuestEmail: '', 
-                        vegetarianYN : false,
-                        vegetarianMenus : 0,
-                        childYN : false,
-                        childMenus : 0}
+        const guestRef = firebase.database().ref('guest');
+        const guest = { firstGuestName : this.state.firstGuestName,
+                        firstGuestEmail : this.state.firstGuestEmail, 
+                        secondGuestName : this.state.secondGuestName,
+                        secondGuestEmail: this.state.secondGuestEmail, 
+                        vegetarianYN : this.state.vegetarianYN,
+                        vegetarianMenus : this.state.vegetarianMenus,
+                        childYN : this.state.childYN,
+                        childMenus : this.state.childMenus}
         guestRef.push(guest);
         this.setState({ firstGuestName : '',
                         firstGuestEmail : '', 
@@ -47,42 +52,45 @@ class Authorization extends React.Component{
       }
 
     render(){
-        
-        return(
-            <div id={this.props.id} className="wizzard-form" >
-            <h1>Authorization section to follow!</h1>
+        const vegetarianYN = this.state.vegetarianYN;
+        const childYN = this.state.childYN;
+
+        return( 
+            <div id={this.props.id} className="wizard-form" > 
             <form onSubmit={this.handleSubmit}>
-                <div id="firstGuestName" className="rsvp-section">
-                    <label>firstGuestName</label>
-                    <input type="text" name="firstGuestName" placeholder="What's your name?" onChange={this.handleChange} value={this.state.firstGuestName} />
-                </div>
-                <div id="firstGuestEmail" className="rsvp-section">
-                    <label>firstGuestEmail</label>
-                    <input type="text" name="email" placeholder="What's your email address?" onChange={this.handleChange} value={this.state.firstGuestEmail} />
-                </div>
-                <div id="secondGuestName" className="rsvp-section">
-                    <label>secondGuestName</label>
-                    <input type="text" name="secondGuestName" placeholder="What's your name?" onChange={this.handleChange} value={this.state.secondGuestName} />
-                </div>
-                <div id="secondGuestEmail" className="rsvp-section">
-                    <label>secondGuestEmail</label>
-                    <input type="text" name="email" placeholder="What's your email address?" onChange={this.handleChange} value={this.state.secondGuestEmail} />
+                <div className="rsvp-section">
+                    <label>Име на гост:</label>
+                    <input type="text" name="firstGuestName" placeholder="Вашите имена?" onChange={this.handleChange} value={this.state.firstGuestName} />
                 </div>
                 <div className="rsvp-section">
-                    <label>Vegetarian?</label>
-                    <input type="checkbox" name="vegetarianYN" onChange={this.handleChange} value={this.state.vegetarianYN}/>
+                    <label>Електонна поща:</label>
+                    <input type="text" name="firstGuestEmail" placeholder="Адрес на електронна поща?" onChange={this.handleChange} value={this.state.firstGuestEmail} />
                 </div>
-                {this.state.vegetarianYN === true && <div className="rsvp-section">
+                <div className="rsvp-section">
+                    <label>Име на гост:</label>
+                    <input type="text" name="secondGuestName" placeholder="Вашите имена?" onChange={this.handleChange} value={this.state.secondGuestName} />
+                </div>
+                <div className="rsvp-section">
+                    <label>Електронна поща</label>
+                    <input type="text" name="secondGuestEmail" placeholder="Адрес на елетронна поща?" onChange={this.handleChange} value={this.state.secondGuestEmail} />
+                </div>
+                <div className="rsvp-section">
+                    <label>Желаете ли вегетарианско меню?</label>
+                    <input type="checkbox" name="vegetarianYN" onChange={this.handleCheckboxChange} checked={this.state.vegetarianYN}/>
+                </div>
+                {vegetarianYN === true && <div className="rsvp-section">
                     <input type="number" name="vegetarianMenus" placeholder="0" onChange={this.handleChange} value={this.state.vegetarianMenus}/>
                 </div>}
                 <div className="rsvp-section">
-                    <label>Child?</label>
-                    <input type="checkbox" name="childYN" onChange={this.handleChange} value={this.state.childYN}/>
+                    <br/>
+                    <label>Желаете ли детско меню?</label>
+                    <input type="checkbox" name="childYN" onChange={this.handleCheckboxChange} checked={this.state.childYN}/>
                 </div>
-                {this.state.childYN === true && <div className="rsvp-section">
+                {childYN === true && <div className="rsvp-section">
                     <input type="number" name="childMenus" placeholder="0" onChange={this.handleChange} value={this.state.childMenus}/>
                 </div>}
-                <button>Submit</button>
+                <br/>
+                <button type="submit">Submit</button>
             </form>
             </div>
         )

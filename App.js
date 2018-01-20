@@ -12,7 +12,7 @@ class App extends React.Component {
       return (
         <div id="App">
         <TitleBar id='titlebar'></TitleBar>
-        <div id='titleseparator' style={{ height: '200px' }}></div>
+        <div id='titleseparator' style={{ height: '150px' }}></div>
         <Sticky enabled={true}>
         <Menu id="menu"
               items={[{label:"HOME", href:"home"},

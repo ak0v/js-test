@@ -216,10 +216,20 @@ h1 {
     text-align: center;
     width: 100%;
 }
-
+.wizard-form input[type='number'] {
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 8px 0;
+    padding: 12px 20px;
+    text-align: center;
+    width: 100%;
+}
 .wizard-form input[type='checkbox'] {
     float: left;
-    margin: 3px 6px;
+    margin: 3px 6px; 
 }
 
 .wizard-form button {
@@ -490,7 +500,7 @@ img.location-image {
 /* Desktop */
 @media (max-width: 1000px) {
     h1 {
-        font-size: 4.8em;
+        font-size: 4em;
     }
 
     .titlebar .bride-name {
@@ -520,19 +530,19 @@ img.location-image {
       
 }
 /**/
-/* Tablet *//*
+/* Tablet */
 @media (max-width: 900px) {
     /* Hide the menu if running on a device with screen smaller than its width */
-   /* nav {
-        display: none
+    nav {
+        font-size: 12px;
     }
 }
-*/
-/* Phablet *//*
+
+/* Phablet */
 @media (max-width: 600px) {
     body {
         background-image: url('../img/bgimage-mobile.jpg');
-        background-size: 140%;
+        background-size: 210%;
     }
 
     h1 {
@@ -552,7 +562,7 @@ img.location-image {
         font-size: 0.8em;
         padding-bottom: 6px;
     }
-
+/*
     .titlebar .bride-name {
         font-size: 4em;
     }
@@ -563,7 +573,7 @@ img.location-image {
 
     .titlebar .wedding-date {
         font-size: 1.5em;
-    }
+    }*/
 
     .topic-wrapper {
         width: 90%;
@@ -579,13 +589,21 @@ img.location-image {
 
     #gmap iframe {
         border: 0;
-        width: 220px;
+        width: 200px;
     }
 }
-*/
-/* Phone *//*
+
+/* Phone */
 @media (max-width: 400px) {
     body {
-        background-size: 360%;
+        background-image: url('../img/bgimage-mobile.jpg');
+        background-size: 280%;
+        
     }
-}*/
+    nav {
+        font-size: 8px;
+    }
+    .menu ul li a { 
+        padding: 5px 10px; 
+    }
+}
