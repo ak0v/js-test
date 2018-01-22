@@ -532,7 +532,7 @@ img.location-image {
 /**/
 /* Tablet */
 @media (max-width: 900px) {
-    /* Hide the menu if running on a device with screen smaller than its width */
+    /* Decerease size of the menu if running on a device with screen smaller than its width */
     nav {
         font-size: 12px;
     }
@@ -589,7 +589,7 @@ img.location-image {
 
     #gmap iframe {
         border: 0;
-        width: 200px;
+        width: 180px;
     }
 }
 

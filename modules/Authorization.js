@@ -1,5 +1,5 @@
 import React from 'react'
-import firebase from './firebase';  
+import firebase from './firebase';   
 
 class Authorization extends React.Component{
     constructor(){
@@ -40,7 +40,10 @@ class Authorization extends React.Component{
                         vegetarianMenus : this.state.vegetarianMenus,
                         childYN : this.state.childYN,
                         childMenus : this.state.childMenus}
-        guestRef.push(guest);
+        guestRef.push(guest); 
+        const mailOptions = {
+
+        }
         this.setState({ firstGuestName : '',
                         firstGuestEmail : '', 
                         secondGuestName : '',

@@ -1,0 +1,32 @@
+[debug] [2018-01-22T19:17:26.234Z] ----------------------------------------------------------------------
+[debug] [2018-01-22T19:17:26.238Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ACK\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-01-22T19:17:26.239Z] CLI Version:   3.16.0
+[debug] [2018-01-22T19:17:26.239Z] Platform:      win32
+[debug] [2018-01-22T19:17:26.239Z] Node Version:  v8.9.2
+[debug] [2018-01-22T19:17:26.239Z] Time:          Mon Jan 22 2018 21:17:26 GMT+0200 (FLE Standard Time)
+[debug] [2018-01-22T19:17:26.239Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-22T19:17:26.260Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-22T19:17:26.260Z] > authorizing via signed-in user
+[debug] [2018-01-22T19:17:26.264Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/js-training-1  
+  
+ Mon Jan 22 2018 21:17:26 GMT+0200 (FLE Standard Time)
+[debug] [2018-01-22T19:17:27.301Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-22T19:17:27.304Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/js-training-1/tokens  
+  
+ Mon Jan 22 2018 21:17:27 GMT+0200 (FLE Standard Time)
+[debug] [2018-01-22T19:17:28.053Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ACK\wedding\wedding3\js-test'...
+[info] 
+[debug] [2018-01-22T19:17:28.065Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/js-training-1  
+  
+ Mon Jan 22 2018 21:17:28 GMT+0200 (FLE Standard Time)
+[debug] [2018-01-22T19:17:29.056Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-22T19:17:29.061Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1020111315819/clients/_:getWebAppConfig  
+  
+ Mon Jan 22 2018 21:17:29 GMT+0200 (FLE Standard Time)
+[debug] [2018-01-22T19:17:29.647Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: /
+[info] +  hosting: Local server: http://localhost:5000
+
