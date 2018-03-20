@@ -22,21 +22,23 @@ const mailTransport = nodemailer.createTransport({
     }
 });
 
-exports.sendRSVPEmail = functions.database.ref('guest').onWrite(event => {
+exports.sendRSVPEmail = functions.database.ref('guest/{rsvp}').onWrite(event => {
     const rsvp = event.data.val();
-
-    const firstGuestEmail = rsvp.firstGuestEmail;
-
-    return sendRSVPEmail(rsvp, firstGuestEmail);
+    return sendRSVPEmail(rsvp);
 });
 
-function sendRSVPEmail(rsvp,firstGuestEmail) {
+function sendRSVPEmail(rsvp) {
     const mailOptions = {
         from : `stefkaplusandrey4life@gmail.com`,
         to : `andrej.kovachev@gmail.com`
     }
     mailOptions.subject = `Потвърждение от ${rsvp.firstGuestName} и ${rsvp.secondGuestName}`
-    mailOptions.text = `${firstGuestEmail} , ${rsvp.vegetarianMenus}`;
+    mailOptions.text = `${rsvp.firstGuestEmail} , ${rsvp.vegetarianMenus}`;
+    mailOptions.html = `<h1>Потвърждение от ${rsvp.firstGuestName} и ${rsvp.secondGuestName}<h1>`+
+                       `<p>Име: ${rsvp.firstGuestName} <br/> Имейл:${rsvp.firstGuestEmail}  </p>`+
+                       `<p>Име: ${rsvp.secondGuestName} <br/> Имейл:${rsvp.secondGuestEmail}  </p>`+
+                       `<p>Вегетарианско: ${rsvp.vegetarianYN} <br/> Брой:${rsvp.vegetarianMenus}  </p>`+
+                       `<p>Детско: ${rsvp.childYN} <br/> Брой:${rsvp.childMenus}  </p>` 
     mailTransport.sendMail(mailOptions).then(() => {
         console.log('New rsvp mail sent to andrej.kovachev@gmail.com');
     })
